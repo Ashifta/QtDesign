@@ -9,4 +9,12 @@ CONFIG -= app_bundle
 
 TEMPLATE = app
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    importelement.cpp \
+    typeelement.cpp
+
+HEADERS += \
+    iserializecomponent.h \
+    importelement.h \
+    typeelement.h
+
