@@ -14,12 +14,11 @@ Create a QML file
 
  Design Approach: QML is a tree structure like a parent child relationship, any QML file having following elemets associated with it.
 1. Import statement  
-2. Property("key:value")
-3. QML Type("Class") 
-4. Array Notation( "[]" )
+2. QML Type Called TypeElement
+
   
-In order to create such a tree structure, need to add and remove child components, and serialize each elements of data to create a QML file.
-Here we can use Composite Desiign patttern( from Structural ).
+In order to create such a tree structure, need to add and remove child components, and serialize(operation) each elements of data to create a QML file.
+Here we can use Composite Desiign patttern. Please check <b>GenerateQMLFile</b> for basic implemetation of composite type.
 
 <b> B ) Observer Pattern: </b>
 
