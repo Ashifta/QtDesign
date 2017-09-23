@@ -1,4 +1,11 @@
+#include <QtDebug>
 #include "importelement.h"
+
+
+ImportElement::~ImportElement()
+{
+    qDebug()<< Q_FUNC_INFO;
+}
 
 ImportElement::ImportElement(const QVariant uri, const short major, const short minor)
     :m_uri(uri)

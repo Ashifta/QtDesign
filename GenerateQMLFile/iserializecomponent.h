@@ -2,7 +2,7 @@
 #define ISERIALIZECOMPONENT_H
 
 #include <QByteArray>
-
+#include "common.h"
 
 /**
  * @brief Interface component to serialize operation.
@@ -23,13 +23,13 @@ public:
     *
     * @param used to add child of qml element
     */
-   virtual void add( ISerializeComponent* ){}
+   virtual void add( ISerializeComponent_prt ){}
    /**
     * @brief
     *
     * @param used to remove the qml element.
     */
-   virtual void remove(  ISerializeComponent* ){}
+   virtual void remove( ISerializeComponent_prt ){}
 public:
    /**
     * @brief

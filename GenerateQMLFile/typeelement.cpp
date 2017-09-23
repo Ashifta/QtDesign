@@ -1,3 +1,4 @@
+#include <QtDebug>
 #include "typeelement.h"
 #include "importelement.h"
 
@@ -8,11 +9,16 @@ TypeElement::TypeElement(const QVariant& typeName,const bool isRoot )
 
 }
 
+TypeElement::~TypeElement()
+{
+    qDebug()<< Q_FUNC_INFO;
+}
+
 void TypeElement::serialize(QByteArray &data)
 {
     if( m_isRoot)
     {
-        foreach( ISerializeComponent* import , m_imports)
+        foreach( ISerializeComponent_prt import , m_imports)
         {
             import->serialize(data);
             data.append("\n");
@@ -25,7 +31,7 @@ void TypeElement::serialize(QByteArray &data)
     data.append(M_OPENELEMENT);
 
 
-    foreach( ISerializeComponent* child , m_childs)
+    foreach( ISerializeComponent_prt child , m_childs)
     {
         child->serialize(data);
     }
@@ -33,13 +39,16 @@ void TypeElement::serialize(QByteArray &data)
     data.append(M_CLOSEELEMENT);
 }
 
-void TypeElement::addImport(ISerializeComponent* comp)
+void TypeElement::addImport(ISerializeComponent_prt comp)
 {
-    m_imports.append(comp);
+    if(m_imports.contains(comp))
+    {
+        m_imports.append(comp);
+    }
 }
 
 
-void TypeElement::add(ISerializeComponent * comp)
+void TypeElement::add(ISerializeComponent_prt comp)
 {
     if(!m_childs.contains(comp))
     {
@@ -47,13 +56,13 @@ void TypeElement::add(ISerializeComponent * comp)
     }
 }
 
-void TypeElement::remove(ISerializeComponent * comp)
+void TypeElement::remove(ISerializeComponent_prt comp)
 {
   if(m_childs.contains(comp))
   {
       int index = m_childs.indexOf(comp);
-      ISerializeComponent* item = m_childs.takeAt(index);
-      delete item;
+       m_childs.takeAt(index);
+       ///No explicit delete, since se use std::shared_ptr.
   }
 }
 

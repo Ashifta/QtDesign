@@ -13,6 +13,10 @@
 class ImportElement : public ISerializeComponent
 {
 public:
+
+    ~ImportElement();
+
+
     /**
      * @brief
      *

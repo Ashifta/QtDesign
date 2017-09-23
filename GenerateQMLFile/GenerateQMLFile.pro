@@ -1,6 +1,7 @@
 QT += core
 QT -= gui
 
+
 CONFIG += c++11
 
 TARGET = GenerateQMLFile
@@ -16,5 +17,9 @@ SOURCES += main.cpp \
 HEADERS += \
     iserializecomponent.h \
     importelement.h \
-    typeelement.h
+    typeelement.h \
+    common.h
+
+target.target = /opt/
+INSTALLS += target
 
