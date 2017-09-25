@@ -21,7 +21,7 @@ In order to create such a tree structure, need to add and remove child component
 Here we can use Composite Desiign patttern. Please check <b>GenerateQMLFile</b> for basic implemetation of composite type.
 
 <b> B ) Observer Pattern: Example IPhoneUpdate</b>
-In real world senario, Mr X is like to know the <i>updates</i> of new iphone series from Apple Inc. He <i>registers</> to AppleInc for iphone updates. There are N number of Mr X and Mrs Y's are registered with Apple Inc.
+In real world senario, Mr X is like to know the <i>updates</i> of new iphone series from Apple Inc. He <i>registers</i> to AppleInc for iphone updates. There are N number of Mr X and Mrs Y's are registered with Apple Inc.
     After few months Apple <i>publish</i> new version of update to all registered customers. Mr X and Mrs Y are now updated to new iPhone.
     
  Mr X should have a "update" method, Mr X should have identity, Apple Inc should provide an interface to puplic to register for iPhone update. Apple Inc should publish the notification.
